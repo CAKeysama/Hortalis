@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hortalis - Hortas Urbanas</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-neutral-light font-montserrat">
+    <header class="fixed w-full navbar-glass shadow-sm z-50">
+      <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <img src="/assets/Logo Branca.svg" alt="Hortalis Logo" class="h-8 w-8" />
+          <span class="font-raleway font-extrabold text-2xl text-neutral-light pt-2">Hortalis</span>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a href="/" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Início</a>
+          <a href="/#sobre" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Sobre</a>
+          <a href="/#mapa" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Mapa</a>
+          <a href="/#contato" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Indicar Horta</a>
+          <a href="/tutoriais.html" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Tutoriais</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="inicio" class="pt-24 pb-16 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h1 class="font-raleway text-4xl md:text-5xl font-bold text-neutral-dark mb-4">
+              Descubra Hortas Urbanas Perto de Você
+            </h1>
+            <p class="text-xl text-neutral-dark mb-6 pr-5">
+              Conectamos você às hortas urbanas da sua região, promovendo uma alimentação saudável e sustentável.
+            </p>
+            <a href="#mapa" class="bg-primary text-neutral-light px-8 py-3 rounded-lg hover:bg-primary-dark transition-colors inline-block">
+              Explorar Hortas
+            </a>
+          </div>
+          <div class="md:w-1/2">
+            <img 
+              src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+              alt="Horta Urbana" 
+              class="rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Sobre Section -->
+      <section id="sobre" class="py-16 bg-neutral-light">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto text-center mb-12">
+            <h2 class="font-raleway text-3xl font-bold mb-4 text-neutral-dark">Sobre o Hortalis</h2>
+            <p class="text-lg text-neutral-dark">
+              O Hortalis é uma iniciativa que visa conectar pessoas a hortas urbanas locais, promovendo a agricultura urbana sustentável e o acesso a alimentos frescos e saudáveis.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="text-center p-6">
+              <div class="w-16 h-16 bg-primary-light/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+              </div>
+              <h3 class="font-raleway text-xl font-semibold mb-2 text-neutral-dark">Mapeamento</h3>
+              <p class="text-neutral-dark">Localizamos e mapeamos hortas urbanas para facilitar o acesso da comunidade.</p>
+            </div>
+            
+            <div class="text-center p-6">
+              <div class="w-16 h-16 bg-primary-light/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 class="font-raleway text-xl font-semibold mb-2 text-neutral-dark">Comunidade</h3>
+              <p class="text-neutral-dark">Fortalecemos laços entre produtores e consumidores locais.</p>
+            </div>
+            
+            <div class="text-center p-6">
+              <div class="w-16 h-16 bg-primary-light/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </div>
+              <h3 class="font-raleway text-xl font-semibold mb-2 text-neutral-dark">Sustentabilidade</h3>
+              <p class="text-neutral-dark">Promovemos práticas sustentáveis e agricultura urbana responsável.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section id="mapa" class="py-16 bg-neutral-light">
+        <div class="container mx-auto px-4">
+          <h2 class="font-raleway text-3xl font-bold text-center mb-8 text-neutral-dark">Encontre Hortas Próximas</h2>
+          
+          <!-- Search Bar -->
+          <div class="max-w-2xl mx-auto mb-8">
+            <div class="relative">
+              <input 
+                type="text" 
+                id="searchInput"
+                placeholder="Busque por alimentos (ex: alface, tomate, cenoura...)"
+                class="w-full px-4 py-3 pl-12 rounded-lg border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-neutral-light"
+              />
+              <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+            <!-- Search Results Counter -->
+            <div id="searchResults" class="mt-2 text-sm text-neutral-dark hidden">
+              <span id="resultsCount">0</span> hortas encontradas
+            </div>
+            <!-- No Results Message -->
+            <div id="noResults" class="mt-4 p-4 bg-primary-light/10 rounded-lg hidden">
+              <p class="text-primary-dark">
+                Nenhuma horta encontrada com este alimento. 
+                Que tal experimentar: <span id="suggestions" class="font-medium"></span>
+              </p>
+            </div>
+          </div>
+
+          <div id="map" class="h-[600px] rounded-lg shadow-lg"></div>
+        </div>
+      </section>
+
+      <!-- Contato Section -->
+      <section id="contato" class="py-16 bg-neutral-light">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-primary-light/10 rounded-2xl p-8 md:p-12 shadow-xl">
+              <div class="text-center mb-12">
+                <h2 class="font-raleway text-4xl font-bold text-neutral-dark mb-4">Conhece uma Horta?</h2>
+                <p class="text-xl text-neutral-dark max-w-2xl mx-auto">
+                  Ajude-nos a expandir nossa rede de hortas urbanas! Se você conhece uma horta que ainda não está em nosso mapa, compartilhe conosco os detalhes abaixo.
+                </p>
+              </div>
+
+              <form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                  <div>
+                    <label for="nome" class="block text-sm font-semibold text-neutral-dark mb-2">Seu Nome</label>
+                    <input type="text" id="nome" name="nome" 
+                           class="w-full px-4 py-3 rounded-lg border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-neutral-light" 
+                           required>
+                  </div>
+                  
+                  <div>
+                    <label for="email" class="block text-sm font-semibold text-neutral-dark mb-2">Seu E-mail</label>
+                    <input type="email" id="email" name="email" 
+                           class="w-full px-4 py-3 rounded-lg border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-neutral-light" 
+                           required>
+                  </div>
+
+                  <div>
+                    <label for="horta_nome" class="block text-sm font-semibold text-neutral-dark mb-2">Nome da Horta</label>
+                    <input type="text" id="horta_nome" name="horta_nome" 
+                           class="w-full px-4 py-3 rounded-lg border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-neutral-light" 
+                           required>
+                  </div>
+
+                  <div>
+                    <label for="endereco" class="block text-sm font-semibold text-neutral-dark mb-2">Endereço da Horta</label>
+                    <input type="text" id="endereco" name="endereco" 
+                           class="w-full px-4 py-3 rounded-lg border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-neutral-light" 
+                           required>
+                  </div>
+                </div>
+
+                <div class="space-y-6">
+                  <div>
+                    <label for="tipo" class="block text-sm font-semibold text-neutral-dark mb-2">Tipo de Horta</label>
+                    <select id="tipo" name="tipo" 
+                            class="w-full px-4 py-3 rounded-lg border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-neutral-light" 
+                            required>
+                      <option value="">Selecione um tipo</option>
+                      <option value="comunitaria">Comunitária</option>
+                      <option value="educativa">Educativa</option>
+                      <option value="terapeutica">Terapêutica</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="alimentos" class="block text-sm font-semibold text-neutral-dark mb-2">Principais Alimentos Cultivados</label>
+                    <input type="text" id="alimentos" name="alimentos" 
+                           placeholder="Ex: alface, tomate, cenoura" 
+                           class="w-full px-4 py-3 rounded-lg border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-neutral-light" 
+                           required>
+                  </div>
+
+                  <div>
+                    <label for="descricao" class="block text-sm font-semibold text-neutral-dark mb-2">Descrição da Horta</label>
+                    <textarea id="descricao" name="descricao" rows="4" 
+                              class="w-full px-4 py-3 rounded-lg border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-neutral-light" 
+                              required></textarea>
+                  </div>
+                </div>
+
+                <div class="md:col-span-2 text-center">
+                  <button type="submit" 
+                          class="bg-primary text-neutral-light px-8 py-4 rounded-lg hover:bg-primary-dark transition-colors text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                    Enviar Indicação
+                  </button>
+                  <p class="mt-4 text-sm text-neutral-dark">
+                    Sua contribuição é fundamental para expandir nossa rede de hortas urbanas e promover uma alimentação mais sustentável.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="py-16 bg-neutral-light">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+              <h2 class="font-raleway text-4xl font-bold text-neutral-dark mb-4">Dúvidas Frequentes</h2>
+              <p class="text-xl text-neutral-dark">
+                Encontre respostas para as perguntas mais comuns sobre hortas urbanas e nossa plataforma.
+              </p>
+            </div>
+
+            <div class="space-y-6">
+              <!-- FAQ Item 1 -->
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-neutral-dark">Como posso participar de uma horta comunitária?</h3>
+                    <svg class="w-6 h-6 text-primary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                <div class="px-6 pb-4 hidden">
+                  <p class="text-neutral-dark">
+                    Para participar de uma horta comunitária, você pode:
+                  </p>
+                  <ul class="list-disc list-inside mt-2 space-y-2 text-neutral-dark">
+                    <li>Localizar uma horta próxima usando nosso mapa</li>
+                    <li>Entrar em contato diretamente com os responsáveis</li>
+                    <li>Comparecer nos horários de funcionamento</li>
+                    <li>Participar das atividades e mutirões organizados</li>
+                    <li>Contribuir com seu tempo e conhecimento</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-neutral-dark">Quais os benefícios de participar de uma horta solidária?</h3>
+                    <svg class="w-6 h-6 text-primary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                <div class="px-6 pb-4 hidden">
+                  <ul class="list-disc list-inside space-y-2 text-neutral-dark">
+                    <li>Acesso a alimentos frescos e orgânicos</li>
+                    <li>Aprendizado sobre agricultura urbana</li>
+                    <li>Conexão com a comunidade local</li>
+                    <li>Contribuição para a sustentabilidade</li>
+                    <li>Melhoria da saúde física e mental</li>
+                    <li>Economia na compra de alimentos</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-neutral-dark">Preciso levar alguma ferramenta ou equipamento?</h3>
+                    <svg class="w-6 h-6 text-primary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                <div class="px-6 pb-4 hidden">
+                  <p class="text-neutral-dark mb-2">
+                    Na maioria das hortas comunitárias, as ferramentas básicas são fornecidas. No entanto, é recomendável:
+                  </p>
+                  <ul class="list-disc list-inside space-y-2 text-neutral-dark">
+                    <li>Levar luvas de jardinagem próprias</li>
+                    <li>Usar roupas apropriadas para o trabalho</li>
+                    <li>Levar protetor solar e chapéu</li>
+                    <li>Garrafa de água</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-neutral-dark">Como funciona a divisão dos alimentos colhidos?</h3>
+                    <svg class="w-6 h-6 text-primary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                <div class="px-6 pb-4 hidden">
+                  <p class="text-neutral-dark mb-2">
+                    A divisão dos alimentos varia de acordo com cada horta, mas geralmente:
+                  </p>
+                  <ul class="list-disc list-inside space-y-2 text-neutral-dark">
+                    <li>Participantes ativos recebem parte da colheita</li>
+                    <li>Existe um sistema de rodízio para colheita</li>
+                    <li>Parte da produção pode ser doada</li>
+                    <li>Alguns produtos podem ser vendidos para manutenção da horta</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-neutral-dark">Posso levar crianças para a horta comunitária?</h3>
+                    <svg class="w-6 h-6 text-primary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                <div class="px-6 pb-4 hidden">
+                  <p class="text-neutral-dark mb-2">
+                    Sim! A maioria das hortas comunitárias recebe bem as crianças. É uma ótima oportunidade para:
+                  </p>
+                  <ul class="list-disc list-inside space-y-2 text-neutral-dark">
+                    <li>Educação ambiental na prática</li>
+                    <li>Aprendizado sobre alimentação saudável</li>
+                    <li>Desenvolvimento de responsabilidade</li>
+                    <li>Conexão com a natureza</li>
+                  </ul>
+                  <p class="mt-2 text-neutral-dark">
+                    Apenas certifique-se de supervisionar as crianças e seguir as orientações específicas de cada horta.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-primary text-neutral-light py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+          <!-- Sobre o Hortalis -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Sobre o Hortalis</h3>
+            <p class="text-neutral-light/90 mb-8">
+              Conectamos pessoas a hortas comunitárias para promover alimentação saudável, sustentabilidade e integração social.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links Rápidos -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Links Rápidos</h3>
+            <ul class="space-y-4">
+              <li><a href="#inicio" class="text-neutral-light/90 hover:text-white transition-colors">Início</a></li>
+              <li><a href="#faq" class="text-neutral-light/90 hover:text-white transition-colors">Dúvidas</a></li>
+              <li><a href="#mapa" class="text-neutral-light/90 hover:text-white transition-colors">Mapa</a></li>
+              <li><a href="#contato" class="text-neutral-light/90 hover:text-white transition-colors">Contato</a></li>
+              <li><a href="tutoriais.html" class="text-neutral-light/90 hover:text-white transition-colors">Tutoriais</a></li>
+            </ul>
+          </div>
+
+          <!-- Contato -->
+          <div class="lg:col-span-2">
+            <h3 class="text-xl font-bold mb-6">Contato</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24  24"  fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>(16) 99295-2093</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <span>miguelmoura@hortalis.com.br</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Matão,SP - Brasil</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/js/data.js" type="module"></script>
+    <script src="/js/script.js" type="module"></script>
+  </body>
+</html>

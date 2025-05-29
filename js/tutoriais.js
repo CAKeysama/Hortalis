@@ -1,5 +1,30 @@
 import page from 'page';
 
+// Mobile Navigation Functions
+window.toggleMobileNav = () => {
+  const mobileNav = document.getElementById('mobileNav');
+  mobileNav.classList.toggle('active');
+  document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+};
+
+window.closeMobileNav = () => {
+  const mobileNav = document.getElementById('mobileNav');
+  mobileNav.classList.remove('active');
+  document.body.style.overflow = '';
+};
+
+// Close mobile nav when clicking outside
+document.addEventListener('click', (e) => {
+  const mobileNav = document.getElementById('mobileNav');
+  const hamburger = document.querySelector('.hamburger');
+  
+  if (mobileNav?.classList.contains('active') && 
+      !mobileNav.contains(e.target) && 
+      !hamburger.contains(e.target)) {
+    closeMobileNav();
+  }
+});
+
 // Calendário de Plantio - Dados
 const calendarioPlantio = {
   primavera: {
@@ -36,7 +61,7 @@ const calendarioPlantio = {
   }
 };
 
-// Função para alternar tabs
+// Função para alternar tabs with mobile optimization
 const switchTab = (tabId) => {
   // Oculta todos os conteúdos
   document.querySelectorAll('.tab-content').forEach(content => {
@@ -50,11 +75,22 @@ const switchTab = (tabId) => {
   });
   
   // Mostra o conteúdo selecionado
-  document.getElementById(tabId).classList.remove('hidden');
+  const selectedContent = document.getElementById(tabId);
+  if (selectedContent) {
+    selectedContent.classList.remove('hidden');
+    
+    // Scroll into view on mobile
+    if (window.innerWidth <= 768) {
+      selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
   
   // Ativa a tab selecionada
-  document.querySelector(`[data-tab="${tabId}"]`).classList.remove('bg-primary/10', 'text-primary');
-  document.querySelector(`[data-tab="${tabId}"]`).classList.add('bg-primary', 'text-neutral-light');
+  const selectedTab = document.querySelector(`[data-tab="${tabId}"]`);
+  if (selectedTab) {
+    selectedTab.classList.remove('bg-primary/10', 'text-primary');
+    selectedTab.classList.add('bg-primary', 'text-neutral-light');
+  }
 };
 
 // Função para alternar o calendário

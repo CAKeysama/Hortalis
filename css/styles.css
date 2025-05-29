@@ -284,3 +284,44 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   border-radius: 0.5rem;
 }
+
+/* Additional responsive styles for tutorials page */
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .calendar-month {
+    margin-bottom: 1rem;
+  }
+
+  .calendar-month-header {
+    padding: 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .calendar-month-content {
+    padding: 0.75rem;
+  }
+
+  .plant-tag {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .tab-button {
+    width: calc(50% - 0.5rem);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .video-container {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+
+  .video-container iframe {
+    border-radius: 0;
+  }
+}

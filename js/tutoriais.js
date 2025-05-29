@@ -1,5 +1,30 @@
 import page from 'page';
 
+// Mobile Navigation Functions
+window.toggleMobileNav = () => {
+  const mobileNav = document.getElementById('mobileNav');
+  mobileNav.classList.toggle('active');
+  document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+};
+
+window.closeMobileNav = () => {
+  const mobileNav = document.getElementById('mobileNav');
+  mobileNav.classList.remove('active');
+  document.body.style.overflow = '';
+};
+
+// Close mobile nav when clicking outside
+document.addEventListener('click', (e) => {
+  const mobileNav = document.getElementById('mobileNav');
+  const hamburger = document.querySelector('.hamburger');
+  
+  if (mobileNav?.classList.contains('active') && 
+      !mobileNav.contains(e.target) && 
+      !hamburger.contains(e.target)) {
+    closeMobileNav();
+  }
+});
+
 // Calendário de Plantio - Dados
 const calendarioPlantio = {
   primavera: {
@@ -37,7 +62,7 @@ const calendarioPlantio = {
 };
 
 // Função para alternar tabs
-const switchTab = (tabId) => {
+window.switchTab = (tabId) => {
   // Oculta todos os conteúdos
   document.querySelectorAll('.tab-content').forEach(content => {
     content.classList.add('hidden');
@@ -58,8 +83,10 @@ const switchTab = (tabId) => {
 };
 
 // Função para alternar o calendário
-const toggleCalendarioMes = (estacao) => {
+window.toggleCalendarioMes = (estacao) => {
   const calendario = document.getElementById('calendario-plantio');
+  if (!calendario) return;
+  
   calendario.innerHTML = '';
   
   const dados = calendarioPlantio[estacao];
@@ -83,7 +110,7 @@ const toggleCalendarioMes = (estacao) => {
 };
 
 // Função para inscrição na newsletter
-const handleNewsletterSubmit = (event) => {
+window.handleNewsletterSubmit = (event) => {
   event.preventDefault();
   const email = event.target.email.value;
   
@@ -91,11 +118,6 @@ const handleNewsletterSubmit = (event) => {
   alert('Inscrição realizada com sucesso!');
   event.target.reset();
 };
-
-// Exporta as funções para uso global
-window.switchTab = switchTab;
-window.toggleCalendarioMes = toggleCalendarioMes;
-window.handleNewsletterSubmit = handleNewsletterSubmit;
 
 // Inicializa a primeira tab e estação
 document.addEventListener('DOMContentLoaded', () => {

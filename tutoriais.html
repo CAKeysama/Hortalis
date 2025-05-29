@@ -47,42 +47,42 @@
       </nav>
     </header>
 
-    <main class="pt-24">
+    <main class="pt-24 w-full max-w-full overflow-x-hidden">
       <!-- Hero Section -->
-      <section class="bg-primary/5 py-16">
-        <div class="container mx-auto px-4 w-full min-w-0">
+      <section class="bg-primary/5 py-8 sm:py-16 w-full max-w-full">
+        <div class="container mx-auto px-2 sm:px-4 w-full max-w-full min-w-0">
           <div class="w-full max-w-4xl mx-auto text-center min-w-0">
-            <h1 class="font-raleway text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
+            <h1 class="font-raleway text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-dark mb-6 break-words">
               Dicas e Tutoriais de Jardinagem
             </h1>
-            <p class="text-xl text-neutral-dark mb-8">
+            <p class="text-lg sm:text-xl text-neutral-dark mb-8 break-words">
               Aprenda a cultivar seu próprio alimento com nossos guias práticos e dicas especializadas.
               Do primeiro vaso à sua horta completa, estamos aqui para ajudar em cada passo.
             </p>
-            <div class="flex flex-wrap gap-4 justify-center max-w-full min-w-0 w-full overflow-x-auto">
+            <div class="flex flex-wrap gap-2 sm:gap-4 justify-center w-full max-w-full min-w-0">
               <button 
-                class="tab-button bg-primary text-neutral-light sm:px-6 px-3 py-3 rounded-lg transition-colors min-w-0"
+                class="tab-button bg-primary text-neutral-light sm:px-6 px-3 py-3 rounded-lg transition-colors break-words"
                 data-tab="primeiros-passos"
                 onclick="switchTab('primeiros-passos')"
               >
                 Primeiros Passos
               </button>
               <button 
-                class="tab-button bg-primary/10 text-primary sm:px-6 px-3 py-3 rounded-lg transition-colors min-w-0"
+                class="tab-button bg-primary/10 text-primary sm:px-6 px-3 py-3 rounded-lg transition-colors break-words"
                 data-tab="guias"
                 onclick="switchTab('guias')"
               >
                 Guias Práticos
               </button>
               <button 
-                class="tab-button bg-primary/10 text-primary sm:px-6 px-3 py-3 rounded-lg transition-colors min-w-0"
+                class="tab-button bg-primary/10 text-primary sm:px-6 px-3 py-3 rounded-lg transition-colors break-words"
                 data-tab="dicas"
                 onclick="switchTab('dicas')"
               >
                 Dicas Sazonais
               </button>
               <button 
-                class="tab-button bg-primary/10 text-primary sm:px-6 px-3 py-3 rounded-lg transition-colors min-w-0"
+                class="tab-button bg-primary/10 text-primary sm:px-6 px-3 py-3 rounded-lg transition-colors break-words"
                 data-tab="glossario"
                 onclick="switchTab('glossario')"
               >
@@ -94,8 +94,8 @@
       </section>
 
       <!-- Content Sections -->
-      <section class="py-16">
-        <div class="container mx-auto px-4">
+      <section class="py-8 sm:py-16 w-full max-w-full">
+        <div class="container mx-auto px-2 sm:px-4 w-full max-w-full">
           <!-- Primeiros Passos -->
           <div id="primeiros-passos" class="tab-content">
             <div class="max-w-4xl mx-auto">
@@ -327,33 +327,33 @@
           <div id="dicas" class="tab-content hidden">
             <div class="max-w-4xl mx-auto">
               <!-- Calendário de Plantio -->
-              <div class="bg-white rounded-xl shadow-lg p-6 mb-8 max-w-full overflow-x-hidden">
-                <h3 class="font-raleway text-2xl font-bold text-neutral-dark mb-6">
+              <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8 max-w-full w-full overflow-x-hidden">
+                <h3 class="font-raleway text-2xl font-bold text-neutral-dark mb-6 break-words">
                   Calendário de Plantio
                 </h3>
-                <div class="w-full min-w-0">
-                  <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <div class="w-full">
+                  <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 w-full">
                     <button 
                       onclick="toggleCalendarioMes('primavera')"
-                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
+                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium break-words"
                     >
                       Primavera
                     </button>
                     <button 
                       onclick="toggleCalendarioMes('verao')"
-                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
+                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium break-words"
                     >
                       Verão
                     </button>
                     <button 
                       onclick="toggleCalendarioMes('outono')"
-                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
+                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium break-words"
                     >
                       Outono
                     </button>
                     <button 
                       onclick="toggleCalendarioMes('inverno')"
-                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
+                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium break-words"
                     >
                       Inverno
                     </button>

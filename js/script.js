@@ -1,6 +1,31 @@
 import { hortas } from './data.js';
 import page from 'page';
 
+// Mobile Navigation Functions
+window.toggleMobileNav = () => {
+  const mobileNav = document.getElementById('mobileNav');
+  mobileNav.classList.toggle('active');
+  document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+};
+
+window.closeMobileNav = () => {
+  const mobileNav = document.getElementById('mobileNav');
+  mobileNav.classList.remove('active');
+  document.body.style.overflow = '';
+};
+
+// Close mobile nav when clicking outside
+document.addEventListener('click', (e) => {
+  const mobileNav = document.getElementById('mobileNav');
+  const hamburger = document.querySelector('.hamburger');
+  
+  if (mobileNav.classList.contains('active') && 
+      !mobileNav.contains(e.target) && 
+      !hamburger.contains(e.target)) {
+    closeMobileNav();
+  }
+});
+
 // Inicialização do mapa
 const map = L.map('map', {
   scrollWheelZoom: false

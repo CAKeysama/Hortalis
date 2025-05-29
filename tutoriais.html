@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-neutral-light font-montserrat">
+  <body class="bg-neutral-light font-montserrat overflow-x-hidden">
     <header class="fixed w-full navbar-glass shadow-sm z-50">
       <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
         <div class="flex items-center space-x-2">
@@ -22,14 +22,36 @@
           <a href="/#contato" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Indicar Horta</a>
           <a href="/tutoriais.html" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Tutoriais</a>
         </div>
+
+        <!-- Hamburger Menu -->
+        <button 
+          class="hamburger md:hidden"
+          aria-label="Menu de navegação"
+          onclick="toggleMobileNav()"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+          <div class="mobile-nav-links">
+            <a href="/" onclick="closeMobileNav()">Início</a>
+            <a href="/#sobre" onclick="closeMobileNav()">Sobre</a>
+            <a href="/#mapa" onclick="closeMobileNav()">Mapa</a>
+            <a href="/#contato" onclick="closeMobileNav()">Indicar Horta</a>
+            <a href="/tutoriais.html" onclick="closeMobileNav()">Tutoriais</a>
+          </div>
+        </div>
       </nav>
     </header>
 
     <main class="pt-24">
       <!-- Hero Section -->
       <section class="bg-primary/5 py-16">
-        <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto text-center">
+        <div class="container mx-auto px-4 w-full min-w-0">
+          <div class="w-full max-w-4xl mx-auto text-center min-w-0">
             <h1 class="font-raleway text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
               Dicas e Tutoriais de Jardinagem
             </h1>
@@ -37,30 +59,30 @@
               Aprenda a cultivar seu próprio alimento com nossos guias práticos e dicas especializadas.
               Do primeiro vaso à sua horta completa, estamos aqui para ajudar em cada passo.
             </p>
-            <div class="flex flex-wrap gap-4 justify-center">
+            <div class="flex flex-wrap gap-4 justify-center max-w-full min-w-0 w-full overflow-x-auto">
               <button 
-                class="tab-button bg-primary text-neutral-light px-6 py-3 rounded-lg transition-colors"
+                class="tab-button bg-primary text-neutral-light sm:px-6 px-3 py-3 rounded-lg transition-colors min-w-0"
                 data-tab="primeiros-passos"
                 onclick="switchTab('primeiros-passos')"
               >
                 Primeiros Passos
               </button>
               <button 
-                class="tab-button bg-primary/10 text-primary px-6 py-3 rounded-lg transition-colors"
+                class="tab-button bg-primary/10 text-primary sm:px-6 px-3 py-3 rounded-lg transition-colors min-w-0"
                 data-tab="guias"
                 onclick="switchTab('guias')"
               >
                 Guias Práticos
               </button>
               <button 
-                class="tab-button bg-primary/10 text-primary px-6 py-3 rounded-lg transition-colors"
+                class="tab-button bg-primary/10 text-primary sm:px-6 px-3 py-3 rounded-lg transition-colors min-w-0"
                 data-tab="dicas"
                 onclick="switchTab('dicas')"
               >
                 Dicas Sazonais
               </button>
               <button 
-                class="tab-button bg-primary/10 text-primary px-6 py-3 rounded-lg transition-colors"
+                class="tab-button bg-primary/10 text-primary sm:px-6 px-3 py-3 rounded-lg transition-colors min-w-0"
                 data-tab="glossario"
                 onclick="switchTab('glossario')"
               >
@@ -305,37 +327,39 @@
           <div id="dicas" class="tab-content hidden">
             <div class="max-w-4xl mx-auto">
               <!-- Calendário de Plantio -->
-              <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+              <div class="bg-white rounded-xl shadow-lg p-6 mb-8 max-w-full overflow-x-hidden">
                 <h3 class="font-raleway text-2xl font-bold text-neutral-dark mb-6">
                   Calendário de Plantio
                 </h3>
-                <div class="flex flex-wrap gap-4 mb-8">
-                  <button 
-                    onclick="toggleCalendarioMes('primavera')"
-                    class="px-6 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
-                  >
-                    Primavera
-                  </button>
-                  <button 
-                    onclick="toggleCalendarioMes('verao')"
-                    class="px-6 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
-                  >
-                    Verão
-                  </button>
-                  <button 
-                    onclick="toggleCalendarioMes('outono')"
-                    class="px-6 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
-                  >
-                    Outono
-                  </button>
-                  <button 
-                    onclick="toggleCalendarioMes('inverno')"
-                    class="px-6 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
-                  >
-                    Inverno
-                  </button>
+                <div class="w-full min-w-0">
+                  <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button 
+                      onclick="toggleCalendarioMes('primavera')"
+                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
+                    >
+                      Primavera
+                    </button>
+                    <button 
+                      onclick="toggleCalendarioMes('verao')"
+                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
+                    >
+                      Verão
+                    </button>
+                    <button 
+                      onclick="toggleCalendarioMes('outono')"
+                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
+                    >
+                      Outono
+                    </button>
+                    <button 
+                      onclick="toggleCalendarioMes('inverno')"
+                      class="sm:px-6 px-3 py-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors font-medium"
+                    >
+                      Inverno
+                    </button>
+                  </div>
                 </div>
-                <div id="calendario-plantio" class="calendar-grid"></div>
+                <div id="calendario-plantio" class="calendar-grid w-full max-w-full overflow-x-auto min-w-0"></div>
               </div>
             </div>
           </div>
@@ -469,6 +493,7 @@
       </div>
     </footer>
 
+    <script src="/js/script.js" type="module"></script>
     <script src="/js/tutoriais.js" type="module"></script>
   </body>
 </html>

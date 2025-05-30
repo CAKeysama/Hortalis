@@ -60,12 +60,8 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
-.mobile-nav-links a:hover,
-.mobile-nav-links a:focus {
+.mobile-nav-links a:hover {
   opacity: 0.8;
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
 }
 
 .hamburger {
@@ -73,15 +69,11 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   padding: 0.5rem;
   z-index: 50;
-  min-width: 44px;
-  min-height: 44px;
 }
 
 @media (max-width: 768px) {
   .hamburger {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
   }
   
   .desktop-nav {
@@ -89,7 +81,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Map styles */
 #map {
   z-index: 10;
 }
@@ -164,27 +155,22 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 20px 25px -5px rgba(13, 13, 13, 0.1), 0 10px 10px -5px rgba(13, 13, 13, 0.04);
 }
 
-/* Scrollbar styling */
-.modal-content::-webkit-scrollbar,
-.calendar-grid::-webkit-scrollbar {
+/* Scrollbar styling for modal content */
+.modal-content::-webkit-scrollbar {
   width: 8px;
-  height: 8px;
 }
 
-.modal-content::-webkit-scrollbar-track,
-.calendar-grid::-webkit-scrollbar-track {
+.modal-content::-webkit-scrollbar-track {
   background: rgba(13, 13, 13, 0.05);
   border-radius: 4px;
 }
 
-.modal-content::-webkit-scrollbar-thumb,
-.calendar-grid::-webkit-scrollbar-thumb {
+.modal-content::-webkit-scrollbar-thumb {
   background: rgba(13, 13, 13, 0.2);
   border-radius: 4px;
 }
 
-.modal-content::-webkit-scrollbar-thumb:hover,
-.calendar-grid::-webkit-scrollbar-thumb:hover {
+.modal-content::-webkit-scrollbar-thumb:hover {
   background: rgba(13, 13, 13, 0.3);
 }
 
@@ -212,21 +198,16 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(4px);
 }
 
-.modal-close:hover,
-.modal-close:focus {
+.modal-close:hover {
   background: rgba(13, 13, 13, 0.7);
   transform: scale(1.1);
-  outline: none;
 }
 
 /* Calendar styles */
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  width: 100%;
-  overflow-x: auto;
-  padding-bottom: 1rem;
 }
 
 .calendar-month {
@@ -234,9 +215,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .calendar-month-header {
@@ -249,76 +227,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .calendar-month-content {
   padding: 1rem;
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-content: flex-start;
 }
 
 .plant-tag {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   background: #6A9D4D20;
   color: #007C46;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.875rem;
-  transition: all 0.2s;
-}
-
-.plant-tag:hover {
-  background: #6A9D4D30;
-  transform: translateY(-1px);
-}
-
-/* Tutorial cards */
-.tutorial-card {
-  transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.tutorial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.tutorial-image {
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  width: 100%;
-}
-
-/* Tab buttons */
-.tab-button {
-  min-height: 44px;
-  min-width: 44px;
-  padding: 0.75rem 1.5rem;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-}
-
-.tab-button:hover {
-  transform: translateY(-1px);
-}
-
-.tab-button:focus {
-  outline: 2px solid #007C46;
-  outline-offset: 2px;
-}
-
-/* Newsletter form */
-.newsletter-input {
-  min-height: 44px;
-  padding: 0.75rem 1rem;
-}
-
-.newsletter-button {
-  min-height: 44px;
-  min-width: 44px;
-  padding: 0.75rem 1.5rem;
+  margin: 0.25rem;
 }
 
 @keyframes fadeIn {
@@ -330,31 +248,32 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .tab-button {
-    font-size: 0.875rem;
-    padding: 0.625rem 1rem;
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    border-radius: 0.75rem;
+    margin: 0;
+  }
+
+  .modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .calendar-grid {
     grid-template-columns: 1fr;
-  }
-
-  .tutorial-card {
-    margin-bottom: 1.5rem;
   }
 }
 
 /* Video container aspect ratio */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   height: 0;
   overflow: hidden;
   max-width: 100%;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 .video-container iframe {

@@ -27,26 +27,26 @@ document.addEventListener('click', (e) => {
 });
 
 // Inicialização do mapa
-const map = L.map('map', {
+const map = window.L.map('map', {
   scrollWheelZoom: false
 }).setView([-23.550520, -46.633308], 13);
 
 // Adiciona o tile layer do OpenStreetMap
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 // Ícones personalizados para cada tipo de horta
 const icons = {
-  comunitaria: L.divIcon({
+  comunitaria: window.L.divIcon({
     html: '<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-neutral-light"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>',
     className: 'custom-div-icon'
   }),
-  educativa: L.divIcon({
+  educativa: window.L.divIcon({
     html: '<div class="w-8 h-8 rounded-full bg-primary-light flex items-center justify-center text-neutral-light"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>',
     className: 'custom-div-icon'
   }),
-  terapeutica: L.divIcon({
+  terapeutica: window.L.divIcon({
     html: '<div class="w-8 h-8 rounded-full bg-primary-dark flex items-center justify-center text-neutral-light"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>',
     className: 'custom-div-icon'
   })
@@ -86,7 +86,7 @@ const addMarkers = (hortasToShow = hortas) => {
 
   // Adiciona novos marcadores
   hortasToShow.forEach(horta => {
-    const marker = L.marker([horta.latitude, horta.longitude], {
+    const marker = window.L.marker([horta.latitude, horta.longitude], {
       icon: icons[horta.tipo]
     })
       .bindPopup(createPopupContent(horta))
@@ -96,7 +96,7 @@ const addMarkers = (hortasToShow = hortas) => {
 
   // Ajusta o zoom para mostrar todos os marcadores se houver resultados
   if (hortasToShow.length > 0) {
-    const group = new L.featureGroup(markers);
+    const group = new window.L.featureGroup(markers);
     map.fitBounds(group.getBounds(), { padding: [50, 50] });
   }
 };

@@ -36,6 +36,39 @@ const calendarioPlantio = {
   }
 };
 
+// Initialize event listeners when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Tab switching
+  const tabButtons = document.querySelectorAll('.tab-button');
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tabId = button.getAttribute('data-tab');
+      switchTab(tabId);
+    });
+  });
+
+  // Calendar season buttons
+  const seasonButtons = document.querySelectorAll('[onclick^="toggleCalendarioMes"]');
+  seasonButtons.forEach(button => {
+    button.removeAttribute('onclick');
+    button.addEventListener('click', () => {
+      const season = button.textContent.trim().toLowerCase();
+      toggleCalendarioMes(season);
+    });
+  });
+
+  // Newsletter form
+  const newsletterForm = document.querySelector('form');
+  if (newsletterForm) {
+    newsletterForm.removeAttribute('onsubmit');
+    newsletterForm.addEventListener('submit', handleNewsletterSubmit);
+  }
+
+  // Initialize first tab and season
+  switchTab('primeiros-passos');
+  toggleCalendarioMes('primavera');
+});
+
 // Função para alternar tabs
 const switchTab = (tabId) => {
   // Oculta todos os conteúdos
@@ -91,14 +124,3 @@ const handleNewsletterSubmit = (event) => {
   alert('Inscrição realizada com sucesso!');
   event.target.reset();
 };
-
-// Exporta as funções para uso global
-window.switchTab = switchTab;
-window.toggleCalendarioMes = toggleCalendarioMes;
-window.handleNewsletterSubmit = handleNewsletterSubmit;
-
-// Inicializa a primeira tab e estação
-document.addEventListener('DOMContentLoaded', () => {
-  switchTab('primeiros-passos');
-  toggleCalendarioMes('primavera');
-});

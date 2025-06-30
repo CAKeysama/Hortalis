@@ -22,7 +22,7 @@ Para desenvolver o Hortalis, estamos utilizando um conjunto de tecnologias moder
 ## 🌍 Visite o Projeto
 
 Acesse o Hortalis e explore o mapa interativo das hortas urbanas:  
-🔗 [Hortalis - Site ao Vivo](https://dreamy-taiyaki-92066d.netlify.app)
+🔗 [Hortalis - Site ao Vivo](https://splendid-marzipan-7991cd.netlify.app)
 
 ## 📞 Contato
 Se tiver alguma dúvida ou sugestão, entre em contato!

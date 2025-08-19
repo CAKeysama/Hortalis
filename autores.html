@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autores - Hortalis</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-neutral-light font-montserrat overflow-x-hidden">
+    <header class="fixed w-full navbar-glass shadow-sm z-50">
+      <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <img src="/assets/Logo Branca.svg" alt="Hortalis Logo" class="h-8 w-8" />
+          <a href="/"><span class="font-raleway font-extrabold text-2xl text-neutral-light pt-2">Hortalis</span></a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a href="/" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Início</a>
+          <a href="/#sobre" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Sobre</a>
+          <a href="/#mapa" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Mapa</a>
+          <a href="/#contato" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Indicar Horta</a>
+          <a href="/tutoriais.html" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Tutoriais</a>
+          <a href="/autores.html" class="text-neutral-light hover:text-neutral-light/80 transition-colors">Autores</a>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <button 
+          class="hamburger md:hidden"
+          aria-label="Menu de navegação"
+          onclick="toggleMobileNav()"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+          <div class="mobile-nav-links">
+            <a href="/" onclick="closeMobileNav()">Início</a>
+            <a href="/#sobre" onclick="closeMobileNav()">Sobre</a>
+            <a href="/#mapa" onclick="closeMobileNav()">Mapa</a>
+            <a href="/#contato" onclick="closeMobileNav()">Indicar Horta</a>
+            <a href="/tutoriais.html" onclick="closeMobileNav()">Tutoriais</a>
+            <a href="/autores.html" onclick="closeMobileNav()">Autores</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-24">
+      <!-- Hero -->
+      <section class="bg-primary/5 py-12 md:py-16">
+        <div class="container mx-auto px-4 text-center">
+          <h1 class="font-raleway text-3xl md:text-5xl font-bold text-neutral-dark mb-4">Conheça os Autores</h1>
+          <p class="text-neutral-dark text-lg md:text-xl max-w-3xl mx-auto">Celebramos as pessoas por trás do Hortalis. Estes são os corações e mentes que tornam o projeto possível.</p>
+        </div>
+      </section>
+
+      <!-- Authors Grid -->
+      <section class="py-12 md:py-16">
+        <div class="container mx-auto px-4">
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            <!-- Card 1 -->
+            <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-primary/10">
+              <div class="h-56 bg-neutral-dark/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Autor 1" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-raleway text-2xl font-bold text-neutral-dark">Autor 1</h3>
+                <p class="text-primary font-medium mb-3">Função/Especialidade</p>
+                <p class="text-neutral-dark mb-6">Breve bio do autor destacando a paixão por hortas urbanas, comunidade e sustentabilidade. Texto placeholder.</p>
+                <div class="flex items-center gap-3">
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-primary/10">
+              <div class="h-56 bg-neutral-dark/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=1200&auto=format&fit=crop" alt="Autor 2" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-raleway text-2xl font-bold text-neutral-dark">Autor 2</h3>
+                <p class="text-primary font-medium mb-3">Função/Especialidade</p>
+                <p class="text-neutral-dark mb-6">Breve bio do autor com foco em tecnologia, mapeamento e inovação para hortas urbanas. Texto placeholder.</p>
+                <div class="flex items-center gap-3">
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-primary/10">
+              <div class="h-56 bg-neutral-dark/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1200&auto=format&fit=crop" alt="Autor 3" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-raleway text-2xl font-bold text-neutral-dark">Autor 3</h3>
+                <p class="text-primary font-medium mb-3">Função/Especialidade</p>
+                <p class="text-neutral-dark mb-6">Breve bio do autor com atuação em comunidade, educação e impacto social. Texto placeholder.</p>
+                <div class="flex items-center gap-3">
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-primary/10">
+              <div class="h-56 bg-neutral-dark/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop" alt="Autor 4" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-raleway text-2xl font-bold text-neutral-dark">Autor 4</h3>
+                <p class="text-primary font-medium mb-3">Função/Especialidade</p>
+                <p class="text-neutral-dark mb-6">Bio curta com foco em design, experiência do usuário e identidade visual do projeto. Texto placeholder.</p>
+                <div class="flex items-center gap-3">
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-primary/10">
+              <div class="h-56 bg-neutral-dark/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1531123414780-f74239cdf0f5?q=80&w=1200&auto=format&fit=crop" alt="Autor 5" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-raleway text-2xl font-bold text-neutral-dark">Autor 5</h3>
+                <p class="text-primary font-medium mb-3">Função/Especialidade</p>
+                <p class="text-neutral-dark mb-6">Bio curta com foco em dados, pesquisa e impacto ambiental do projeto. Texto placeholder.</p>
+                <div class="flex items-center gap-3">
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-primary/10">
+              <div class="h-56 bg-neutral-dark/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop" alt="Autor 6" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-raleway text-2xl font-bold text-neutral-dark">Autor 6</h3>
+                <p class="text-primary font-medium mb-3">Função/Especialidade</p>
+                <p class="text-neutral-dark mb-6">Bio curta com foco em conteúdo, curadoria e comunicação com a comunidade. Texto placeholder.</p>
+                <div class="flex items-center gap-3">
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary/20 transition-colors" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-primary text-neutral-light py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+          <!-- Sobre o Hortalis -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Sobre o Hortalis</h3>
+            <p class="text-neutral-light/90 mb-8">
+              Conectamos pessoas a hortas comunitárias para promover alimentação saudável, sustentabilidade e integração social.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links Rápidos -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Links Rápidos</h3>
+            <ul class="space-y-4">
+              <li><a href="/" class="text-neutral-light/90 hover:text-white transition-colors">Início</a></li>
+              <li><a href="/#sobre" class="text-neutral-light/90 hover:text-white transition-colors">Sobre</a></li>
+              <li><a href="/#mapa" class="text-neutral-light/90 hover:text-white transition-colors">Mapa</a></li>
+              <li><a href="/#contato" class="text-neutral-light/90 hover:text-white transition-colors">Contato</a></li>
+              <li><a href="/tutoriais.html" class="text-neutral-light/90 hover:text-white transition-colors">Tutoriais</a></li>
+              <li><a href="/autores.html" class="text-neutral-light/90 hover:text-white transition-colors">Autores</a></li>
+            </ul>
+          </div>
+
+          <!-- Contato -->
+          <div class="lg:col-span-2">
+            <h3 class="text-xl font-bold mb-6">Contato</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24  24"  fill="none" stroke="currentColor" stroke-width="2">
+                  <path  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>(16) 9 9268-8721</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <span>suporte@hortalis.com.br</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Matão, SP - Brasil</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Funções básicas para o menu mobile, evitando dependência do script do mapa
+      function toggleMobileNav() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+      }
+      function closeMobileNav() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Fecha ao clicar fora
+      document.addEventListener('click', (e) => {
+        const mobileNav = document.getElementById('mobileNav');
+        const hamburger = document.querySelector('.hamburger');
+        if (mobileNav && hamburger && mobileNav.classList.contains('active') && !mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
+          closeMobileNav();
+        }
+      });
+    </script>
+  </body>
+  </html>
+
+
